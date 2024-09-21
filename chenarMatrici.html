@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrici</title>
+    <link rel="stylesheet" href="Styles\BasicStyleInterface.css">
+    <link rel="icon" href="Images\logo.png" type="image/icon type">
+</head>
+
+<body>
+
+    <header>
+        <div class="header">
+
+
+            <div style="display: inline-block; width:40% ; height:100%">
+                <a href="index.html"><img src="Images\LogoHeader.png" height=100px></a>
+
+            </div>
+            <div style="display: inline-block; height: 100px; width:59% ; height:100%" align="right">
+
+
+                <a class="cool" href="">Documentatie</a>
+                <a class="cool" href="">Probleme</a>
+
+            </div>
+        </div>
+        </div>
+    </header>
+
+    <nav style="width: 100%; margin: 0; text-align: center; ">
+        <ul style=" list-style: none; margin: 0; padding-left: 0; background-color: rgb(0 ,0 ,0);">
+            <a href=" AlgoritmiElementari.html" style="background-color: rgb(0 ,0 ,0);">
+                <li>Algoritmi Elementari</li>
+            </a>
+            <a href="Vectori.html" style="background-color: rgb(0 ,0 ,0);">
+                <li>Vectori</li>
+            </a>
+            <a href="Matrici.html" style="background-color: rgb(0 ,0 ,0);">
+                <li style="background-color: rgb(46, 191, 145);">Matrici</li>
+            </a>
+        </ul>
+    </nav>
+    <ul class="nav_ul">
+        <a class="nav_a" href="declarareMatrici.html">
+            <li class="nav_il">Declararea. Citirea. Afișarea.</li>
+        </a>
+        <a class="nav_a" href="chenarMatrici.html" style="background-color: rgb(158, 109, 205);">
+            <li class="nav_il">Chenarul unei matrici. Iterarea în spirală a unei matrici.</li>
+        </a>
+        <a class="nav_a" href="maximMatrice.html">
+            <li class="nav_il">Maximul/minimul dintr-o matrice</li>
+        </a>
+        <a class="nav_a" href="sumaMatrice.html">
+            <li class="nav_il">Suma /produsul/minimul/câte elemente impare pe linia și coloana K.</li>
+        </a>
+        <a class="nav_a" href="conditiiMatrice.html">
+            <li class="nav_il">Condiții pe diagonale in matricile pătratice si condiții pe zone(nord, sud, este,vest)
+            </li>
+        </a>
+        <a class="nav_a" href="generareMatrici.html">
+            <li class="nav_il">Generare matrice ( 2 exemple)</li>
+        </a>
+    </ul>
+    <div class="lection" style=" overflow: auto;">
+        <h1 style="text-align: center;">Chenarul unei matrici. Iterarea în spirală a unei matrici.</h1>
+        <p>Trebuie precizat că iterarea printr-o matrice se poate face în tot felul de moduri, iar unele probleme vor
+            cere o iterare ciudată. Una dintre acestea este iterarea prin chenarul unei matrici. Mai întâi trebuie sa
+            observăm ce înseamnă chenarul unei matrici, ca apoi să putem itera prin ea. Prin iterarea chenarul unei
+            matrici, putem introduce și iterarea în spirală.
+        </p>
+        <img src="Images\clip_image001.png" height="350px">
+        <p>Observăm în această matrice faptul că marginea de sus se află pe linia 0, marginea din dreapta pe coloana 6,
+            marginea de jos pe linia 3, iar marginea din stânga pe coloana 0.</p>
+        <p>Astfel, putem generaliza ca marginea să fie reuniunea tuturor elementelor de pe prima și ultima linie, precum
+            și prima și ultima coloană.</p>
+        <p>Codul următor va realiza suma tuturor numerelor de pe marginile matricei.</p>
+        <p>Cod exemplu:</p>
+        <pre><code>int v[1010][1010], n, m, i, j, k;
+(citire)
+///Indexam de la 1
+i = 1;
+for (j = 1; j < m; j++) ///mergem până la ultimul element, fără a-l aborda, deoarece îl vom aborda în următorul for.
+    k = k + v[i][j];
+j = m;
+for (i = 1; i < n; i++)
+    k = k + v[i][j];
+i = n;
+for (j = m; j > 1; j--)
+    k = k + v[i][j]
+j = 1;
+for (i = n; i > 1; i--)
+    k = k + v[i][j];
+cout << k;
+            </code></pre>
+        <p>Pentru a merge în spirală, putem adăuga un alt for, cu indicele k, care pleacă de la 0 și va fi mai mic decât
+            min(n,m)/2. De fiecare dată când terminăm o iterare pe o margine, k crește, astfel scăzând mărimea matricei,
+            permițându-ne să continuăm iterare pe submatricea nouă, creând spirala.</p>
+        <p>Cod exemplu:</p>
+        <pre><code>int v[1010][1010], fin[1010*1010], lg, n, m, i, j, k;
+(citire)
+for (k = 0; k < min(n,m)/2; k++)
+{
+    ///Indexam de la 1
+    i = k+1;
+    for (j = k+1; j < m-k; j++) ///mergem până la ultimul element, fără a-l aborda, deoarece îl vom aborda în următorul for.
+    fin[++lg] = v[i][j];
+    j = m-k;
+    for (i = k+1; i < n-k; i++)
+        fin[++lg] = v[i][j];
+    i = n-k;
+    for (j = m-k; j > k+1; j--)
+        fin[++lg] = v[i][j];
+    j = k+1;
+    for (i = n-k; i > k+1; i--)
+        fin[++lg] = v[i][j]; 
+}
+if (min(n, m)%2 == 1) ///caz special
+    for (i = k+1; i <= n-k; i++)
+        fin[++lg] = v[i][j];
+for (i = 1; i <= lg; i++)
+    out << fin[i] << ‘ ‘; ///afișăm matricea în spirală.
+            </code></pre>
+    </div>
+
+</body>
+
+</html>

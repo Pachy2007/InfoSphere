@@ -50,7 +50,7 @@
         <a class="nav_a" href="chenarMatrici.html">
             <li class="nav_il">Chenarul unei matrici. Iterarea în spirală a unei matrici.</li>
         </a>
-        <a class="nav_a" href="maximMatrice.html">
+        <a class="nav_a" href="maximMatrice.html" style="background-color: rgb(158, 109, 205);">
             <li class="nav_il">Maximul/minimul dintr-o matrice</li>
         </a>
         <a class="nav_a" href="sumaMatrice.html">
@@ -63,8 +63,29 @@
         <a class="nav_a" href="generareMatrici.html">
             <li class="nav_il">Generare matrice ( 2 exemple)</li>
         </a>
-
     </ul>
+    <div class="lection" style=" overflow: auto;">
+        <h1 style="text-align: center;">Maximul/minimul dintr-o matrice</h1>
+        <p>Maximul și minimul dintr-o matrice se poate determina super ușor, prin iterarea acesteia și reținerea a două
+            valori, maxi și mini, care vor fi maximul și minimul.
+            În cazul în care elementele din matrice pot fi negative, atât maximul, cât și minimul vor trebui să fie
+            definite. Acestea pot fi definite fie ca o valoare extrem de mică, sau pot fi definite ca fiind prima
+            valoare din matrice: m[1][1] (sau m[0][0] dacă matricea este indexată de la 0)
+        </p>
+        <p>Cod exemplu:</p>
+        <pre><code>int mini, maxi, v[1010][1010], n, i, j, m;
+//citire
+mini = maxi = v[1][1];
+for (i = 1; i <= n; i++)
+    for (j = 1; j <= m; j++)
+    {
+        mini = min(mini, v[i][j]);
+        maxi = max(maxi, v[i][j]);
+    }
+cout << mini << ’ ’ << maxi;
+            </code></pre>
+    </div>
+
 </body>
 
 </html>

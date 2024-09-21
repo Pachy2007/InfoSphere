@@ -60,11 +60,55 @@
             <li class="nav_il">Condiții pe diagonale in matricile pătratice si condiții pe zone(nord, sud, este,vest)
             </li>
         </a>
-        <a class="nav_a" href="generareMatrici.html">
+        <a class="nav_a" href="generareMatrici.html" style="background-color: rgb(158, 109, 205);">
             <li class="nav_il">Generare matrice ( 2 exemple)</li>
         </a>
-
     </ul>
+    <div class="lection" style=" overflow: auto;">
+        <h1 style="text-align: center;">Generare matrice ( 2 exemple)</h1>
+        <p>Două exemple de generare a unei matrice este generarea unei matrici în spirală și generarea triunghiului lui
+            pascal.</p>
+        <p>Pentru generarea unei matrici în spirală, vom utiliza codul precizat la capitolul chenarului matricei, cu
+            puține modificări:</p>
+        <pre><code>int v[1010][1010], lg, n, m, i, j, k; 
+for (k = 0; k < min(n,m)/2; k++)
+{
+    ///Indexam de la 1
+    i = k+1;
+    for (j = k+1; j < m-k; j++) ///mergem până la ultimul element, fără a-l aborda, deoarece îl vom aborda în următorul for.
+        v[i][j] = ++lg;
+    j = m-k;
+    for (i = k+1; i < n-k; i++)
+        v[i][j] = ++lg;
+    i = n-k;
+    for (j = m-k; j > k+1; j--)
+        v[i][j] = ++lg;
+    j = k+1;
+    for (i = n-k; i > k+1; i--)
+        v[i][j] = ++lg;
+}
+if (min(n, m)%2 == 1) ///caz special
+    for (i = k+1; i <= n-k; i++)
+    v[i][j] = ++lg;
+for (i = 1; i <= n; i++, cout << ’\n’)
+    for (j = 1; j <= m; j++)
+        cout << v[i][j] << ’ ’;
+            </code></pre>
+        <img src="Images\image.png" height="350px">
+        <p>Triunghiul lui pascal este un triunghi, asemenea șirului lui Fibonacci, ai cărui elemente sunt suma a celor
+            două elemente direct deasupra sa. Triunghiul lui pascal este utilizat în principal în combinatorică.</p>
+        <p>Un cod care generează triunghiul lui pascal ar arăta astfel:
+            int v[1010][1010], i, j, n; ///este obligatoriu ca matricea sa aibă valorile de la 0!!!
+        </p>
+        <pre><code>for (i = 1; i <= n; i++)
+{
+    v[i][1] = 1;
+    for (j = 2; j < i; j++)
+        v[i][j] = v[i-1][j-1] + v[i-1][j];
+    v[i][i] = 1;
+}  ///se observă cum rămâne mult spațiu gol în matrice. Acest fapt poate fi remediat cu vectori din STL, însă utilizarea acestora iese din scop acestei prezentări.
+            </code></pre>
+    </div>
 </body>
 
 </html>

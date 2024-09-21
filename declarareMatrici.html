@@ -44,7 +44,7 @@
         </ul>
     </nav>
     <ul class="nav_ul">
-        <a class="nav_a" href="declarareMatrici.html">
+        <a class="nav_a" href="declarareMatrici.html" style="background-color: rgb(158, 109, 205);">
             <li class="nav_il">Declararea. Citirea. Afișarea.</li>
         </a>
         <a class="nav_a" href="chenarMatrici.html">
@@ -63,8 +63,31 @@
         <a class="nav_a" href="generareMatrici.html">
             <li class="nav_il">Generare matrice ( 2 exemple)</li>
         </a>
-
     </ul>
+    <div class="lection" style=" overflow: auto;">
+        <h1 style="text-align: center;">Declararea. Citirea. Afișarea.</h1>
+        <p>Definim matricea ca fiind un tablou bidimensional de valori omogene. Matricea poate fi imaginată ca fiind un
+            plan 2D de lungime n și lățime m, precum o hartă care este împărțită în celule.</p>
+        <p>Declararea unei matrici se face prin a preciza tipul datelor, numele și dimensiunea acesteia, astfel:</p>
+        <pre><code>tip_date nume_matrice [dimensiune_1][dimensiune_2];</code></pre>
+        <p>Exemplu:</p>
+        <pre><code>int m[1010][1010];</code></pre>
+        <p>Observați că mărimea pe care o ocupă o matrice este de dimensiune_1 * dimensiune_2. Aveți grijă la acest
+            fapt, deoarece dimensiunea este o cauză problematică a matricelor!</p>
+        <p>Citirea și afișarea unei matrici se face similar ca la vectori, doar că avem un pas în plus. Ca să putem citi
+            sau să afișăm dintr-o matrice, trebuie mai întâi să ne setăm o linie pe care vom face operații. Astfel,
+            observăm că citirea și afișarea este identică ca la un vector.</p>
+        <p>Cod Exemplu:</p>
+        <pre><code>int m[1010][1010], i, n, m, j;
+for (i = 1; i <= n; i++)
+    for (j = 1; j <= m; j++)
+        cin >> m[i][j]; 
+for (i = 1; i <= n; i++)
+    for (j = 1; j <= m; j++)
+        cout << m[i][j];
+            </code></pre>
+    </div>
+
 </body>
 
 </html>

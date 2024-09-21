@@ -53,7 +53,7 @@
         <a class="nav_a" href="maximMatrice.html">
             <li class="nav_il">Maximul/minimul dintr-o matrice</li>
         </a>
-        <a class="nav_a" href="sumaMatrice.html">
+        <a class="nav_a" href="sumaMatrice.html" style="background-color: rgb(158, 109, 205);">
             <li class="nav_il">Suma /produsul/minimul/câte elemente impare pe linia și coloana K.</li>
         </a>
         <a class="nav_a" href="conditiiMatrice.html">
@@ -63,8 +63,26 @@
         <a class="nav_a" href="generareMatrici.html">
             <li class="nav_il">Generare matrice ( 2 exemple)</li>
         </a>
-
     </ul>
+    <div class="lection" style=" overflow: auto;">
+        <h1 style="text-align: center;">Suma /produsul/minimul/câte elemente impare pe linia și coloana K</h1>
+        <p>Pentru a afla suma, produsul, minimul, și câte elemente impare pe linia k, este suficient cât să setăm
+            indicele i ca fiind k. </p>
+        <p>Pentru a afla aceleași lucruri pe coloana k, trebuie să setăm indicele j ca fiind k, și să iterăm prin i-uri.
+        </p>
+        <p>Cod exemplu:</p>
+        <pre><code>int v[1010][1010], m,n,i,k,j;
+//citire
+cin >> k;
+i = k;
+for (j = 1; j <= m; j++)
+    ///operații.
+j = k;
+for (i = 1; i <= n; i++)
+    ///operații.
+            </code></pre>
+    </div>
+
 </body>
 
 </html>

@@ -56,15 +56,44 @@
         <a class="nav_a" href="sumaMatrice.html">
             <li class="nav_il">Suma /produsul/minimul/câte elemente impare pe linia și coloana K.</li>
         </a>
-        <a class="nav_a" href="conditiiMatrice.html">
+        <a class="nav_a" href="conditiiMatrice.html" style="background-color: rgb(158, 109, 205);">
             <li class="nav_il">Condiții pe diagonale in matricile pătratice si condiții pe zone(nord, sud, este,vest)
             </li>
         </a>
         <a class="nav_a" href="generareMatrici.html">
             <li class="nav_il">Generare matrice ( 2 exemple)</li>
         </a>
-
     </ul>
+    <div class="lection" style=" overflow: auto;">
+        <h1 style="text-align: center;">Condiții pe diagonale in matricile pătratice si condiții pe zone(nord, sud,
+            este,vest)</h1>
+        <p>O matrice pătratică este o matrice care are dimensiunile coloanelor și a liniilor egale. Într-o matrice
+            pătratică, există două diagonale: diagonala principală, și diagonala secundară.</p>
+        <p>Diagonala principală începe de la v[1][1] și se încheie la v[n][n], și diagonala secundară, care începe de la
+            v[1][n] și se încheie la v[n][1]. Într-o matrice pătratică, exista mai multe diagonale care sunt paralele cu
+            acestea. În general, un cod care creează suma a diagonalei unui pătrat ar arăta astfel:</p>
+        <p>Cod exemplu:</p>
+        <pre><code>int v[1010][1010], i, j, t, n, q, a, b, s, tip; //tipul unu este diagonala principală, tipul doi este cea secundară.
+//citire
+for (t = 1; t <= q; t++)
+{
+    s = 0;
+    cin >> tip >> a >> b;
+    if (tip == 1) 
+        while ( a <= n && b <= n)
+        {
+            s = s + v[a][b]; a++; b++;
+        }
+    else
+        while (a <= n && b >= 1)
+        {
+            s =s + v[a][b]; a++; b--;
+        }
+    cout << s << ‘\n‘;
+}
+            </code></pre>
+    </div>
+
 </body>
 
 </html>
