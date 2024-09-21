@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algoritmi Elementari</title>
+    <link rel="stylesheet" href="Styles\BasicStyleInterface.css">
+    <link rel="icon" href="Images\logo.png" type="image/icon type">
+</head>
+
+<body>
+
+    <header>
+        <div class="header">
+
+
+            <div style="display: inline-block; width:40% ; height:100%">
+                <a href="index.html"><img src="Images\LogoHeader.png" height=100px></a>
+
+            </div>
+            <div style="display: inline-block; height: 100px; width:59% ; height:100%" align="right">
+
+
+                <a class="cool" href="">Documentatie</a>
+                <a class="cool" href="">Probleme</a>
+
+            </div>
+        </div>
+        </div>
+    </header>
+
+    <nav style="width: 100%; margin: 0; text-align: center; ">
+        <ul style=" list-style: none; margin: 0; padding-left: 0; background-color: rgb(0 ,0 ,0);">
+            <a href=" AlgoritmiElementari.html" style="background-color: rgb(0 ,0 ,0);">
+                <li style="background-color: rgb(46, 191, 145);">Algoritmi Elementari</li>
+            </a>
+            <a href="Vectori.html" style="background-color: rgb(0 ,0 ,0);">
+                <li>Vectori</li>
+            </a>
+            <a href="Matrici.html" style="background-color: rgb(0 ,0 ,0);">
+                <li>Matrici</li>
+            </a>
+        </ul>
+    </nav>
+    <ul class="nav_ul">
+        <a class="nav_a" href="DeterminareaCifrelorUnuiNumar.html">
+            <li class="nav_il">Prelucrarea cifrelor unui număr</li>
+        </a>
+        <a class="nav_a" href="Divizori.html">
+            <li class="nav_il">Divizorii unui număr</li>
+        </a>
+        <a class="nav_a" href="Interschimbare.html">
+            <li class="nav_il">Interschimbarea a două variabile</li>
+        </a>
+        <a class="nav_a" href="CMMDCsiCMMMC.html" style="background-color: rgb(158, 109, 205);">
+            <li class="nav_il">CMMDC și CMMMC</li>
+        </a>
+        <a class="nav_a" href="descompunereFactoriPrimi.html">
+            <li class="nav_il">Descompunerea în factori primi</li>
+        </a>
+        <a class="nav_a" href="fibo.html">
+            <li class="nav_il">Șirul lui Fibonnaci</li>
+        </a>
+        <a class="nav_a" href="aloBazaBaza.html">
+            <li class="nav_il">Trecerea unui număr dintr-o bază în alta</li>
+        </a>
+    </ul>
+    <div class="lection" style=" overflow: auto;">
+        <h1 style="text-align: center;">CMMDC și CMMMC</h1>
+        <p>Definim CMMDC (Cel mai mare divizor comun == Greatest Common Divisor, abreviat „gcd”) ca fiind cel mai mare
+            divizor comun a două numere. Gcd are următoarele proprietăți:</p>
+        <ul style="list-style: decimal;">
+            <li>a|c și b|c, unde c = gcd(a, b)</li>
+            <li>fie x un număr. Gcd(a, Gcd(b, c)) = Gcd(Gcd(a, b), c)</li>
+            <li>a|bc si Gcd(a, b) = 1, deci a|c</li>
+            <li>a|c, b|c și Gcd(a, b) = 1, deci ab|c</li>
+            <li>Gcd(a, b) = 1, Gcd(a, c) = 1, deci Gcd(a, bc) = 1;</li>
+            <li>Gcd(a, 0) nu se definește, deoarece 0 nu are divizori.</li>
+        </ul>
+        <p>Există 2 metode prin care se poate determina Gcd:
+            Algoritmul lui Euclid prin scăderi: Algoritmul lui Euclid cu scăderi se bazează pe ideea că cele mai mare
+            divizor a două numere divide și diferența acestora. Algoritmul va scădea numărul mic din cel mare până când
+            cele două numere devin egale. Valoarea acestora este Gcd(a, b). Exemplu Gcd(25, 15):
+        </p>
+        <pre>
+25, 15 – scădem 25-15 = 10
+10, 15 – scădem 15 – 10 = 5
+10, 5 – scădem 10 – 5 = 5
+5, 5 – stop.
+        </pre>
+        <p>Un cod exemplu ar fi:</p>
+        <pre><code>int Gcd(int a, int b)
+{
+    if (a == 0 || b == 0) return -1; ///nu se defineste Gcd(a, 0);
+    while (a != b) {
+    if (a > b) swap(a, b);
+    a -= b;
+    }
+    return a;
+}
+            </code></pre>
+        <p>Algoritmul lui Euclid prin împărțiri: Algoritmul lui Euclid cu împărțiri se bazează pe ideea că cel mai mare
+            divizor a două numere divide și restul împărțirii acestora, conform teoremei împărțirii cu rest. Algoritmul
+            va determina restul împărțirii lui a la b (pentru care b < a). Apoi, a devine b, iar b devine restul
+                împărțirii. Algoritmul se va executa până când m devine 0, iar rezultatul este a. Exemplu Gcd(25,
+                15):</p>
+                <pre>
+25, 15 – restul = 10, a = 15, b = 10.
+15, 10 – restul = 5, a = 10, b = 5.
+10, 5 – restul = 0, a = 5, b = 0.
+5, 0 – stop.  
+</pre>
+                <p>Un cod exemplu ar fi:</p>
+                <pre><code>int Gcd(int a, int b)
+{
+if (a == 0 || b == 0) return -1; ///nu se defineste Gcd(a, 0)
+if (a < b) swap(a, b);
+    while(b != 0)
+    {
+        int r = a % b.
+        a = b; 
+        b = r;
+    }
+    return a;
+}
+                    </code></pre>
+    </div>
+
+</body>
+
+</html>

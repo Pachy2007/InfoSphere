@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vectori</title>
+    <link rel="stylesheet" href="Styles\BasicStyleInterface.css">
+    <link rel="icon" href="Images\logo.png" type="image/icon type">
+</head>
+
+<body>
+
+    <header>
+        <div class="header">
+
+
+            <div style="display: inline-block; width:40% ; height:100%">
+                <a href="index.html"><img src="Images\LogoHeader.png" height=100px></a>
+
+            </div>
+            <div style="display: inline-block; height: 100px; width:59% ; height:100%" align="right">
+
+
+                <a class="cool" href="">Documentatie</a>
+                <a class="cool" href="">Probleme</a>
+
+            </div>
+        </div>
+        </div>
+    </header>
+
+    <nav style="width: 100%; margin: 0; text-align: center; ">
+        <ul style=" list-style: none; margin: 0; padding-left: 0; background-color: rgb(0 ,0 ,0);">
+            <a href=" AlgoritmiElementari.html" style="background-color: rgb(0 ,0 ,0);">
+                <li>Algoritmi Elementari</li>
+            </a>
+            <a href="Vectori.html" style="background-color: rgb(0 ,0 ,0);">
+                <li style="background-color: rgb(46, 191, 145);">Vectori</li>
+            </a>
+            <a href="Matrici.html" style="background-color: rgb(0 ,0 ,0);">
+                <li>Matrici</li>
+            </a>
+        </ul>
+    </nav>
+    <ul class="nav_ul">
+        <a class="nav_a" href="">
+            <li class="nav_il">Declararea. Citirea. Afișarea</li>
+        </a>
+        <a class="nav_a" href="">
+            <li class="nav_il">Sume si produse</li>
+        </a>
+        <a class="nav_a" href="">
+            <li class="nav_il">Perechi de elemente in vector</li>
+        </a>
+        <a class="nav_a" href="">
+            <li class="nav_il">Ordonarea unui vector</li>
+        </a>
+        <a class="nav_a" href="">
+            <li class="nav_il">Interclasarea unui vector</li>
+        </a>
+        <a class="nav_a" href="">
+            <li class="nav_il">Stergerea / inserarea elementului de pe o pozitie oarecare k</li>
+        </a>
+        <a class="nav_a" href="">
+            <li class="nav_il">Construirea unui vector din alt vector. Inversarea unui vector in alt vector</li>
+        </a>
+        <a class="nav_a" href="">
+            <li class="nav_il">Cea mai lungă secvență crescatoare</li>
+        </a>
+        <a class="nav_a" href="">
+            <li class="nav_il">Vectori de frecvență</li>
+        </a>
+    </ul>
+    <div class="lection" style=" overflow: auto;">
+        <h1 style="text-align: center;">Stergerea / inserarea elementului de pe o pozitie oarecare k</h1>
+        <p>Stergerea și inserarea unul element de pe o poziție k se face în timp n, iar ambele modifică lungimea
+            șirului.</p>
+        <p>Stergerea unui element de pe o poziție k se face astfel: Plecând de la poziția i = k, v[i] va deveni v[i+1],
+            iar v[n] dispare.</p>
+        <p>Cod exemplu:</p>
+        <pre><code>int n, v[1010], k;
+//citire
+cin >> k;
+for (i = k; i < n; i++)
+    v[i] = v[i+1];
+n--;
+            </code></pre>
+        <p>Inserarea unui element de pe o poziție k se face astfel: Plecând de la poziția i = n + 1, v[i] = v[i-1], până
+            la poziția i = k+1 inclusiv.</p>
+        <p>Cod exemplu:</p>
+        <pre><code>int n, v[1010], k, x;
+//citire
+cin >> k >> x;
+for (int i = n+1; i >= k+1; i--)
+    v[i] = v[i-1];
+n++;
+v[k] = x;
+            </code></pre>
+    </div>
+</body>
+
+</html>

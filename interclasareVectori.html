@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vectori</title>
+    <link rel="stylesheet" href="Styles\BasicStyleInterface.css">
+    <link rel="icon" href="Images\logo.png" type="image/icon type">
+</head>
+
+<body>
+
+    <header>
+        <div class="header">
+
+
+            <div style="display: inline-block; width:40% ; height:100%">
+                <a href="index.html"><img src="Images\LogoHeader.png" height=100px></a>
+
+            </div>
+            <div style="display: inline-block; height: 100px; width:59% ; height:100%" align="right">
+
+
+                <a class="cool" href="">Documentatie</a>
+                <a class="cool" href="">Probleme</a>
+
+            </div>
+        </div>
+        </div>
+    </header>
+
+    <nav style="width: 100%; margin: 0; text-align: center; ">
+        <ul style=" list-style: none; margin: 0; padding-left: 0; background-color: rgb(0 ,0 ,0);">
+            <a href=" AlgoritmiElementari.html" style="background-color: rgb(0 ,0 ,0);">
+                <li>Algoritmi Elementari</li>
+            </a>
+            <a href="Vectori.html" style="background-color: rgb(0 ,0 ,0);">
+                <li style="background-color: rgb(46, 191, 145);">Vectori</li>
+            </a>
+            <a href="Matrici.html" style="background-color: rgb(0 ,0 ,0);">
+                <li>Matrici</li>
+            </a>
+        </ul>
+    </nav>
+    <ul class="nav_ul">
+        <a class="nav_a" href="">
+            <li class="nav_il">Declararea. Citirea. Afișarea</li>
+        </a>
+        <a class="nav_a" href="">
+            <li class="nav_il">Sume si produse</li>
+        </a>
+        <a class="nav_a" href="">
+            <li class="nav_il">Perechi de elemente in vector</li>
+        </a>
+        <a class="nav_a" href="">
+            <li class="nav_il">Ordonarea unui vector</li>
+        </a>
+        <a class="nav_a" href="">
+            <li class="nav_il">Interclasarea unui vector</li>
+        </a>
+        <a class="nav_a" href="">
+            <li class="nav_il">Stergerea / inserarea elementului de pe o pozitie oarecare k</li>
+        </a>
+        <a class="nav_a" href="">
+            <li class="nav_il">Construirea unui vector din alt vector. Inversarea unui vector in alt vector</li>
+        </a>
+        <a class="nav_a" href="">
+            <li class="nav_il">Cea mai lungă secvență crescatoare</li>
+        </a>
+        <a class="nav_a" href="">
+            <li class="nav_il">Vectori de frecvență</li>
+        </a>
+    </ul>
+    <div class="lection" style=" overflow: auto;">
+        <h1 style="text-align: center;">Interclasarea unui vector</h1>
+        <p>Interclasarea este un algoritm ce combină 2 vectori sortați într-unul singur, de complexitate n + m, unde n
+            și m sunt dimensiunile celor doi vectori. Acesta se realizează prin rularea în paralel prin cei doi vectori
+            utilizând 2 indici diferiți și inserarea elementelor într-un vector final.</p>
+        <p>Cod exemplu:</p>
+        <pre><code>int n,a[100000], m , b[100000], p, c[200000];
+int i = 1 , j = 1;
+p = 1;
+while(i <= n && j <= m)
+if(a[i] < b[j])
+    c[p ++] = a[i ++];
+else
+    c[p ++] = b[j ++];
+while(i <= n)
+    c[p ++] = a[i ++];
+while(j <= m)
+    c[p ++] = b[j ++];
+            </code></pre>
+    </div>
+</body>
+
+</html>

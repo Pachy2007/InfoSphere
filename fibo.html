@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algoritmi Elementari</title>
+    <link rel="stylesheet" href="Styles\BasicStyleInterface.css">
+    <link rel="icon" href="Images\logo.png" type="image/icon type">
+</head>
+
+<body>
+
+    <header>
+        <div class="header">
+
+
+            <div style="display: inline-block; width:40% ; height:100%">
+                <a href="index.html"><img src="Images\LogoHeader.png" height=100px></a>
+
+            </div>
+            <div style="display: inline-block; height: 100px; width:59% ; height:100%" align="right">
+
+
+                <a class="cool" href="">Documentatie</a>
+                <a class="cool" href="">Probleme</a>
+
+            </div>
+        </div>
+        </div>
+    </header>
+
+    <nav style="width: 100%; margin: 0; text-align: center; ">
+        <ul style=" list-style: none; margin: 0; padding-left: 0; background-color: rgb(0 ,0 ,0);">
+            <a href=" AlgoritmiElementari.html" style="background-color: rgb(0 ,0 ,0);">
+                <li style="background-color: rgb(46, 191, 145);">Algoritmi Elementari</li>
+            </a>
+            <a href="Vectori.html" style="background-color: rgb(0 ,0 ,0);">
+                <li>Vectori</li>
+            </a>
+            <a href="Matrici.html" style="background-color: rgb(0 ,0 ,0);">
+                <li>Matrici</li>
+            </a>
+        </ul>
+    </nav>
+    <ul class="nav_ul">
+        <a class="nav_a" href="DeterminareaCifrelorUnuiNumar.html">
+            <li class="nav_il">Prelucrarea cifrelor unui număr</li>
+        </a>
+        <a class="nav_a" href="Divizori.html">
+            <li class="nav_il">Divizorii unui număr</li>
+        </a>
+        <a class="nav_a" href="Interschimbare.html">
+            <li class="nav_il">Interschimbarea a două variabile</li>
+        </a>
+        <a class="nav_a" href="CMMDCsiCMMMC.html">
+            <li class="nav_il">CMMDC și CMMMC</li>
+        </a>
+        <a class="nav_a" href="descompunereFactoriPrimi.html">
+            <li class="nav_il">Descompunerea în factori primi</li>
+        </a>
+        <a class="nav_a" href="fibo.html" style="background-color: rgb(158, 109, 205);">
+            <li class="nav_il">Șirul lui Fibonnaci</li>
+        </a>
+        <a class="nav_a" href="aloBazaBaza.html">
+            <li class="nav_il">Trecerea unui număr dintr-o bază în alta</li>
+        </a>
+    </ul>
+    <div class="lection" style=" overflow: auto;">
+        <h1 style="text-align: center;">Șirul lui Fibonnaci</h1>
+        <p>Șirul lui Fibonnaci este definit astfel: un șir ai cărui primele 2 elemente sunt 1. Fiecare din următoarele
+            elemente sunt suma elementelor anterioare. Elementele din șirul lui Fibonacci se determină pe care brută. Un
+            cod ar arăta astfel:</p>
+        <pre><code>int a = 1, b = 1, c, n;
+cin >> n;
+while(n)
+{
+    --n;
+    c = (a + b);
+    cout << c << ‘\n‘;
+    a = b; b = c; ///numerele cresc aproximativ exponential! Astfel, dupa n ~= 30, numerele pot iesi din tipul int!
+}</code></pre>
+        <p>Șirul lui fibonacci are niște proprietăți interesante. Ele sunt mai bine descrise în <a>acest videoclip: </p>
+        <a style="text-decoration: none;"
+            href="https://www.youtube.com/watch?time_continue=227&v=SjSHVDfXHQ4&embeds_referring_euri=https%3A%2F%2Fwww.pbinfo.ro%2F&source_ve_path=MTM5MTE3LDIzODUx">The
+            magic of Fibonacci numbers | Arthur Benjamin | TED
+        </a>
+
+    </div>
+
+
+</body>
+
+</html>

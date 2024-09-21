@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vectori</title>
+    <link rel="stylesheet" href="Styles\BasicStyleInterface.css">
+    <link rel="icon" href="Images\logo.png" type="image/icon type">
+</head>
+
+<body>
+
+    <header>
+        <div class="header">
+
+
+            <div style="display: inline-block; width:40% ; height:100%">
+                <a href="index.html"><img src="Images\LogoHeader.png" height=100px></a>
+
+            </div>
+            <div style="display: inline-block; height: 100px; width:59% ; height:100%" align="right">
+
+
+                <a class="cool" href="">Documentatie</a>
+                <a class="cool" href="">Probleme</a>
+
+            </div>
+        </div>
+        </div>
+    </header>
+
+    <nav style="width: 100%; margin: 0; text-align: center; ">
+        <ul style=" list-style: none; margin: 0; padding-left: 0; background-color: rgb(0 ,0 ,0);">
+            <a href=" AlgoritmiElementari.html" style="background-color: rgb(0 ,0 ,0);">
+                <li>Algoritmi Elementari</li>
+            </a>
+            <a href="Vectori.html" style="background-color: rgb(0 ,0 ,0);">
+                <li style="background-color: rgb(46, 191, 145);">Vectori</li>
+            </a>
+            <a href="Matrici.html" style="background-color: rgb(0 ,0 ,0);">
+                <li>Matrici</li>
+            </a>
+        </ul>
+    </nav>
+    <ul class="nav_ul">
+        <a class="nav_a" href="">
+            <li class="nav_il">Declararea. Citirea. Afișarea</li>
+        </a>
+        <a class="nav_a" href="">
+            <li class="nav_il">Sume si produse</li>
+        </a>
+        <a class="nav_a" href="">
+            <li class="nav_il">Perechi de elemente in vector</li>
+        </a>
+        <a class="nav_a" href="">
+            <li class="nav_il">Ordonarea unui vector</li>
+        </a>
+        <a class="nav_a" href="">
+            <li class="nav_il">Interclasarea unui vector</li>
+        </a>
+        <a class="nav_a" href="">
+            <li class="nav_il">Stergerea / inserarea elementului de pe o pozitie oarecare k</li>
+        </a>
+        <a class="nav_a" href="">
+            <li class="nav_il">Construirea unui vector din alt vector. Inversarea unui vector in alt vector</li>
+        </a>
+        <a class="nav_a" href="">
+            <li class="nav_il">Cea mai lungă secvență crescatoare</li>
+        </a>
+        <a class="nav_a" href="">
+            <li class="nav_il">Vectori de frecvență</li>
+        </a>
+    </ul>
+    <div class="lection" style=" overflow: auto;">
+        <h1>Vectori de frecvență</h1>
+        <p>Vectorii de frecvență sunt vectori normali, dar utilizați diferit. Gândirea de la vectorii de frecvență
+            diferă față de la vectorii normali. Daca la vectorii normali ne puteam gândi ca și cum fiecare element ar
+            însemna mingea cu numărul i scris pe ea, la vectorii de frecvență ne putem gândi ca și cum ar fi cutia cu
+            mingi pe care scrie numărul i. Practic, elementele din vectorii de frecvență sunt găleți în care se pot
+            stoca numărul de elemente identice.</p>
+        <p>Un uz al vectorilor de frecvență este de a determina numărul de cifre k prezente într-un număr. Un cod
+            exemplu ar fi:</p>
+        <pre><code>int n, fr[15], k;
+while(n != 0)
+{
+    fr[n%10]++;
+    n = n / 10;
+}
+out << fr[k]; ///se observă cum nu doar fr[k] are valori în el.
+                </code></pre>
+    </div>
+</body>
+
+</html>

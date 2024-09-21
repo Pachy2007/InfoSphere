@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vectori</title>
+    <link rel="stylesheet" href="Styles\BasicStyleInterface.css">
+    <link rel="icon" href="Images\logo.png" type="image/icon type">
+</head>
+
+<body>
+
+    <header>
+        <div class="header">
+
+
+            <div style="display: inline-block; width:40% ; height:100%">
+                <a href="index.html"><img src="Images\LogoHeader.png" height=100px></a>
+
+            </div>
+            <div style="display: inline-block; height: 100px; width:59% ; height:100%" align="right">
+
+
+                <a class="cool" href="">Documentatie</a>
+                <a class="cool" href="">Probleme</a>
+
+            </div>
+        </div>
+        </div>
+    </header>
+
+    <nav style="width: 100%; margin: 0; text-align: center; ">
+        <ul style=" list-style: none; margin: 0; padding-left: 0; background-color: rgb(0 ,0 ,0);">
+            <a href=" AlgoritmiElementari.html" style="background-color: rgb(0 ,0 ,0);">
+                <li>Algoritmi Elementari</li>
+            </a>
+            <a href="Vectori.html" style="background-color: rgb(0 ,0 ,0);">
+                <li style="background-color: rgb(46, 191, 145);">Vectori</li>
+            </a>
+            <a href="Matrici.html" style="background-color: rgb(0 ,0 ,0);">
+                <li>Matrici</li>
+            </a>
+        </ul>
+    </nav>
+    <ul class="nav_ul">
+        <a class="nav_a" href="">
+            <li class="nav_il">Declararea. Citirea. Afișarea</li>
+        </a>
+        <a class="nav_a" href="">
+            <li class="nav_il">Sume si produse</li>
+        </a>
+        <a class="nav_a" href="">
+            <li class="nav_il">Perechi de elemente in vector</li>
+        </a>
+        <a class="nav_a" href="">
+            <li class="nav_il">Ordonarea unui vector</li>
+        </a>
+        <a class="nav_a" href="">
+            <li class="nav_il">Interclasarea unui vector</li>
+        </a>
+        <a class="nav_a" href="">
+            <li class="nav_il">Stergerea / inserarea elementului de pe o pozitie oarecare k</li>
+        </a>
+        <a class="nav_a" href="">
+            <li class="nav_il">Construirea unui vector din alt vector. Inversarea unui vector in alt vector</li>
+        </a>
+        <a class="nav_a" href="">
+            <li class="nav_il">Cea mai lungă secvență crescatoare</li>
+        </a>
+        <a class="nav_a" href="">
+            <li class="nav_il">Vectori de frecvență</li>
+        </a>
+    </ul>
+    <div class="lection" style=" overflow: auto;">
+        <h1>Ordonarea Unui Vector</h1>
+        <p>Ordonarea unui vector se poate face prin multiple metode. Vom prezenta doar sortarea prin selecție,
+            Bubblesort-ul, si sortul STL.</p>
+        <p>Sortarea prin selecție este cel mai neeficient din cele 3, având o complexitate de n*n. Acesta iterează de n
+            ori prin vectorul de dimensiune n.Vezi animatia de pe pbinfo:</p>
+        <video height="400" controls>
+            <source src="Images\Untitled video - Made with Clipchamp (5).mp4" type="video/mp4">
+            Your browser does not support the video tag.
+
+        </video>
+        <p>Cod Exemplu:</p>
+        <pre><code>int n, v[1010];
+//citire v[] cu n elemente
+for(int i = 1 ; i <= n - 1 ; i ++)
+    for(int j = i + 1 ; j <= n ; j ++)
+        if(v[i] > v[j])
+            swap(v[i], v[j]);
+            </code></pre>
+        <p>!!Pentru sortarea descrescătoare, se schimbă condiția interogației în a fi v[i] < v[j].</p>
+                <p>Bubble Sortul este mai rapid decât sortarea prin selecție în majoritatea cazurilor, însă nu are o
+                    complexitate constantă. Aceasta poate fi, în cel mai rău caz, tot n*n, însă este în general mai
+                    rapid.</p>
+                <p>Bubble Sort se bazează pe următoarele idei:</p>
+                <ul style="font-size: 20px;">
+                    <li>parcurgem vectorul și pentru oricare două elemente învecinate care nu sunt în ordinea dorită, le
+                        interschimbăm valorile</li>
+                    <li>după o singură parcurgere, vectorul nu se va sorta, dar putem repeta parcurgerea</li>
+                    <li>dacă la o parcurgere nu se face nicio interschimbare, vectorul este sortat</li>
+                </ul>
+                <p>Cod Exemplu:</p>
+                <pre><code>int n, v[1010];
+//citire v[] cu n elemente
+bool sorted=false;
+do
+{
+sortat = true;
+for(int i = 1 ; i <= n - 1 ; i ++)
+    if(v[i] > v[i+1])
+    {
+    int aux = v[i];
+    v[i] = v[i+1];
+    v[i+1] = aux;
+    sortat = false;
+    }
+}
+while(!sortat); 
+                    </code></pre>
+                <p>!!Pentru sortarea descrescătoare, se schimbă condiția interogației în a fi v[i] < v[i+1].</p>
+                        <p>Sortatul STL este inclus în librăria algorithm, și este un algoritm de sortare de
+                            complexitate n*log(n), unde log(n) este o funcție ce returnează logaritm de 2 din n. Acesta
+                            acceptă 3 parametri: începutul, sfârșitul și o funcție (regulă de sortare). Pentru detalii
+                            cum funcționează: <a
+                                href="https://www.geeksforgeeks.org/internal-details-of-stdsort-in-c/">geeksforgeeks.org</a>
+                        </p>
+                        <p>Cod exemplu:</p>
+                        <pre><code>int n, v[1010];
+//citire v[] cu n elemente
+sort(v+1, v+1+n); ///v+1 înseamnă sortează începând cu elementul v[1], iar v+1+n înseamnă până la elementul v[n] 
+                            </code></pre>
+                        <p>!!Pentru sortarea descrescătoare, se utilizează functia greater<int>(), astfel: sort(v+1,
+                                v+1+n, greater<int>();)</p>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algoritmi Elementari</title>
+    <link rel="stylesheet" href="Styles\BasicStyleInterface.css">
+    <link rel="icon" href="Images\logo.png" type="image/icon type">
+</head>
+
+<body>
+
+    <header>
+        <div class="header">
+
+
+            <div style="display: inline-block; width:40% ; height:100%">
+                <a href="index.html"><img src="Images\LogoHeader.png" height=100px></a>
+
+            </div>
+            <div style="display: inline-block; height: 100px; width:59% ; height:100%" align="right">
+
+
+                <a class="cool" href="">Documentatie</a>
+                <a class="cool" href="">Probleme</a>
+
+            </div>
+        </div>
+        </div>
+    </header>
+
+    <nav style="width: 100%; margin: 0; text-align: center; ">
+        <ul style=" list-style: none; margin: 0; padding-left: 0; background-color: rgb(0 ,0 ,0);">
+            <a href=" AlgoritmiElementari.html" style="background-color: rgb(0 ,0 ,0);">
+                <li style="background-color: rgb(46, 191, 145);">Algoritmi Elementari</li>
+            </a>
+            <a href="Vectori.html" style="background-color: rgb(0 ,0 ,0);">
+                <li>Vectori</li>
+            </a>
+            <a href="Matrici.html" style="background-color: rgb(0 ,0 ,0);">
+                <li>Matrici</li>
+            </a>
+        </ul>
+    </nav>
+    <ul class="nav_ul">
+        <a class="nav_a" href="DeterminareaCifrelorUnuiNumar.html">
+            <li class="nav_il">Prelucrarea cifrelor unui număr</li>
+        </a>
+        <a class="nav_a" href="Divizori.html" style="background-color: rgb(158, 109, 205);">
+            <li class="nav_il">Divizorii unui număr</li>
+        </a>
+        <a class="nav_a" href="Interschimbare.html">
+            <li class="nav_il">Interschimbarea a două variabile</li>
+        </a>
+        <a class="nav_a" href="CMMDCsiCMMMC.html">
+            <li class="nav_il">CMMDC și CMMMC</li>
+        </a>
+        <a class="nav_a" href="descompunereFactoriPrimi.html">
+            <li class="nav_il">Descompunerea în factori primi</li>
+        </a>
+        <a class="nav_a" href="fibo.html">
+            <li class="nav_il">Șirul lui Fibonnaci</li>
+        </a>
+        <a class="nav_a" href="aloBazaBaza.html">
+            <li class="nav_il">Trecerea unui număr dintr-o bază în alta</li>
+        </a>
+    </ul>
+    <div class="lection" style=" overflow: auto;">
+        <h1 style="text-align: center;">Divizorii unui număr</h1>
+        <p>Divizorii se pot afla prin 2 metode. Vom explora fiecare metodă, precum și verificarea daca un nr este prim,
+            afișarea divizorilor și numărarea acestora.</p>
+        <p>Prima metodă este cea brută, aceea fiind de a lua fiecare număr până la n și a verifica dacă se divid cu
+            acesta. Acest cod va executa n operații. Pentru a fi mai eficient, putem face observația că n nu are
+            divizori mai mari decât n/2. Astfel, codul următor execută n/2 operații:</p>
+        <pre><code>int n, i;
+for (i = 2; i <= n / 2; i = i + 1)
+{
+if (n % i == 0) 
+///i divide n
+}
+            </code></pre>
+        <p>A doua metodă este mai optima. Un divizor al lui n se poate înmulți cu un alt divizor pentru a obține n.
+            Astfel, observăm faptul că cel mai mic divizor dintre acești doi nu este mai mare decât radical din n.
+            Astfel, noul cod va executa doar sqrt(n) operații, unde sqrt(n) (Square Root == rădăcina pătratului) este
+            radical din n. Este important de menționat ca nu vom itera decât numai prin prima jumătate din divizori,
+            astfel cititorul va trebui să aibă grijă la implementări să considere acest fapt. Un cod ar arăta astfel:
+        </p>
+        <pre><code>int n, q;
+for (q = 2; q * q <= n; q = q + 1)
+{
+if (n % q == 0)
+///q divide n și (n/q) divide n, IMPORTANT, daca q * q == n, atunci q si (n/q) sunt egali, iar n este pătrat perfect.
+}
+            </code></pre>
+        <p>Pentru a determina proprietatea unui număr de a fi prim, este suficient să executăm codul precizat de mai sus
+            și să verificăm daca q divide vreodată n, iar pentru a afla numărul de divizori și afișarea acestora, avem
+            acest cod:</p>
+        <pre><code>int n, q, t = 0;
+cin >> n;
+for (q = 2; q * q < n; q = q + 1) 
+{
+   if (n % q == 0){ 
+    t++;
+    out << q << ‘ ‘ << n/q << ‘ ‘;
+        }
+    }
+if (n % q == 0) ///este n pătrat perfect?
+    out << q;
+out << ‘\n‘; 
+out << t;
+                </code></pre>
+    </div>
+</body>
+
+</html>

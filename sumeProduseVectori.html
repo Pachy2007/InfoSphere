@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vectori</title>
+    <link rel="stylesheet" href="Styles\BasicStyleInterface.css">
+    <link rel="icon" href="Images\logo.png" type="image/icon type">
+</head>
+
+<body>
+
+    <header>
+        <div class="header">
+
+
+            <div style="display: inline-block; width:40% ; height:100%">
+                <a href="index.html"><img src="Images\LogoHeader.png" height=100px></a>
+
+            </div>
+            <div style="display: inline-block; height: 100px; width:59% ; height:100%" align="right">
+
+
+                <a class="cool" href="">Documentatie</a>
+                <a class="cool" href="">Probleme</a>
+
+            </div>
+        </div>
+        </div>
+    </header>
+
+    <nav style="width: 100%; margin: 0; text-align: center; ">
+        <ul style=" list-style: none; margin: 0; padding-left: 0; background-color: rgb(0 ,0 ,0);">
+            <a href=" AlgoritmiElementari.html" style="background-color: rgb(0 ,0 ,0);">
+                <li>Algoritmi Elementari</li>
+            </a>
+            <a href="Vectori.html" style="background-color: rgb(0 ,0 ,0);">
+                <li style="background-color: rgb(46, 191, 145);">Vectori</li>
+            </a>
+            <a href="Matrici.html" style="background-color: rgb(0 ,0 ,0);">
+                <li>Matrici</li>
+            </a>
+        </ul>
+    </nav>
+    <ul class="nav_ul">
+        <a class="nav_a" href="">
+            <li class="nav_il">Declararea. Citirea. Afișarea</li>
+        </a>
+        <a class="nav_a" href="">
+            <li class="nav_il">Sume si produse</li>
+        </a>
+        <a class="nav_a" href="">
+            <li class="nav_il">Perechi de elemente in vector</li>
+        </a>
+        <a class="nav_a" href="">
+            <li class="nav_il">Ordonarea unui vector</li>
+        </a>
+        <a class="nav_a" href="">
+            <li class="nav_il">Interclasarea unui vector</li>
+        </a>
+        <a class="nav_a" href="">
+            <li class="nav_il">Stergerea / inserarea elementului de pe o pozitie oarecare k</li>
+        </a>
+        <a class="nav_a" href="">
+            <li class="nav_il">Construirea unui vector din alt vector. Inversarea unui vector in alt vector</li>
+        </a>
+        <a class="nav_a" href="">
+            <li class="nav_il">Cea mai lungă secvență crescatoare</li>
+        </a>
+        <a class="nav_a" href="">
+            <li class="nav_il">Vectori de frecvență</li>
+        </a>
+    </ul>
+    <div class="lection" style=" overflow: auto;">
+        <h1 style="text-align: center;">Sume si produse</h1>
+        <p>Pentru a discuta cum se poate realiza suma și produsele într-un vector, trebuie discutat iterarea într-un
+            vector. Precum la citire, se utilizează un for pentru a itera prin elemente de la 1 la n (sau 0 la n-1).
+            Astfel, noi putem să accesăm fiecare element dintr-un vector. Dacă dorim să iterăm de la un punct până la
+            altul, vom itera de la iteratorul a până la iteratorul b, în loc de la 1 la n. În plus, daca vrem să accesăm
+            un element de la poziția x, nu este nevoie de for, ci putem direct să îl accesăm prin instrucțiunea:
+            v[x];
+        </p>
+        <p>Vom prezenta cum se poate realiza suma și produsele într-un vector, ca apoi să propunem niște aplicații
+            pentru a aplica atât cunoștințele despre vectori, cât și despre algoritmi elementari:</p>
+        <p>int n, v[1010], i, s, p =1; ///Se observă cum vectorul are declarat 10 elemente în plus față de 1000. Se
+            recomandă să se declare +10 elemente decât dimensiunea necesară. Dacă se iterează de la 1 la n, trebuie să
+            se știe ca memoria utilizată este minim n+1. </p>
+        <pre><code>for (i = 1; i <= n; i++)
+    cin >> v[i];
+        
+for (i = 1; i <= n; i++)
+{
+    s = v[i] + s;
+    p = p * v[i];
+}
+cout << s << ‘ ‘ << p;
+        </code></pre>
+        <p>Pentru cititorii observanți, s-a putut observa faptul că al doilea for este redundant, căci operația se putea
+            face în citire. Acesta nu este adesea cazul, însă aici este. </p>
+        <p>
+            Pentru dezvoltarea abilităților, propunem următoarele probleme:</p>
+        <ul style="font-size: 20px;">
+            <li>Realizați suma elementelor prime dintr-un vector</li>
+            <li>Realizați produsul elementelor din prima jumătate de vector și suma elementelor din a doua jumătate</li>
+            <li>Produsul elementelor situate în intervalul determinat de primul și ultimul element (unde fiecare element
+                este mai mic decat n)</li>
+            <li>Suma elementelor divizibile cu primul element</li>
+            <li>Suma elementelor care au cifra pară</li>
+        </ul>
+
+    </div>
+</body>
+
+</html>

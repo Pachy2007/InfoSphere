@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algoritmi Elementari</title>
+    <link rel="stylesheet" href="Styles\BasicStyleInterface.css">
+    <link rel="icon" href="Images\logo.png" type="image/icon type">
+</head>
+
+<body>
+
+    <header>
+        <div class="header">
+
+
+            <div style="display: inline-block; width:40% ; height:100%">
+                <a href="index.html"><img src="Images\LogoHeader.png" height=100px></a>
+
+            </div>
+            <div style="display: inline-block; height: 100px; width:59% ; height:100%" align="right">
+
+
+                <a class="cool" href="">Documentatie</a>
+                <a class="cool" href="">Probleme</a>
+
+            </div>
+        </div>
+        </div>
+    </header>
+
+    <nav style="width: 100%; margin: 0; text-align: center; ">
+        <ul style=" list-style: none; margin: 0; padding-left: 0; background-color: rgb(0 ,0 ,0);">
+            <a href=" AlgoritmiElementari.html" style="background-color: rgb(0 ,0 ,0);">
+                <li style="background-color: rgb(46, 191, 145);">Algoritmi Elementari</li>
+            </a>
+            <a href="Vectori.html" style="background-color: rgb(0 ,0 ,0);">
+                <li>Vectori</li>
+            </a>
+            <a href="Matrici.html" style="background-color: rgb(0 ,0 ,0);">
+                <li>Matrici</li>
+            </a>
+        </ul>
+    </nav>
+    <ul class="nav_ul">
+        <a class="nav_a" href="DeterminareaCifrelorUnuiNumar.html" style="background-color: rgb(158, 109, 205);">
+            <li class="nav_il">Prelucrarea cifrelor unui număr</li>
+        </a>
+        <a class="nav_a" href="Divizori.html">
+            <li class="nav_il">Divizorii unui număr</li>
+        </a>
+        <a class="nav_a" href="Interschimbare.html">
+            <li class="nav_il">Interschimbarea a două variabile</li>
+        </a>
+        <a class="nav_a" href="CMMDCsiCMMMC.html">
+            <li class="nav_il">CMMDC și CMMMC</li>
+        </a>
+        <a class="nav_a" href="descompunereFactoriPrimi.html">
+            <li class="nav_il">Descompunerea în factori primi</li>
+        </a>
+        <a class="nav_a" href="fibo.html">
+            <li class="nav_il">Șirul lui Fibonnaci</li>
+        </a>
+        <a class="nav_a" href="aloBazaBaza.html">
+            <li class="nav_il">Trecerea unui număr dintr-o bază în alta</li>
+        </a>
+    </ul>
+    <div class="lection" style=" overflow: auto;">
+        <h1 style="text-align: center;">Prelucrarea cifrelor unui număr</h1>
+        <p>Cifrele unui număr pot fi manipulate prin utilizarea restului și a câtului la împărțirea la o putere de 10.
+            Datorită acestui fapt, noi putem aplica diferite operații pe numere:</p>
+        <h2>Determinarea cifrelor unui număr</h2>
+        <p>Să ne gândim la un număr (natural), n = 274. Prin restul împărțirii la 10, obținem cifra 4, care este ultima
+            cifră al lui n. Mai observăm faptul că, dacă împărțim la 10 numărul, putem elimina ultima cifră.</p>
+        <p>Dezvoltând ideea anterioară, putem obține orice cifră a oricărui număr relativ ușor. Pentru exemplul de mai
+            sus, restul împărțirii la 100 este 74. Pentru a obține a doua cifră de la stânga la dreapta, putem aplica o
+            împărțire la 10 din 74, astfel obținând 7. </p>
+        <p>O altă metodă de a determina a doua cifră este prin a împărți la 10, apoi prin a obține restul împărțirii la
+            10. Împărțind 274 la 10 obținem 27, iar restul la împărțirea cu 10 este 7.</p>
+        <p>Generalizând, putem obține orice cifră a oricărui număr prin următoarea instrucțiune:</p>
+
+        <h1 style="text-align: center;">cif = (n / pow(10, c-1)) % 10;</h1>
+        <p>unde cif este variabila dorită, n este numărul nostru, c este cifra de la dreapta la stânga pe care o dorim,
+            iar pow() este o funcție ce returnează puterea unui număr la oricare exponent.</p>
+        <p>Observând această instrucțiune, noi putem elimina sau adăuga orice cifră dintr-un număr, prin a ține minte
+            restul unui număr și printr-o împărțire.</p>
+        <p>Pentru adăugare, dacă dorim să adăugăm cifra 3 la prima poziție de la stânga la dreapta a numărului 274, am
+            reține restul la împărțirea la 100, care este 4. După împărțim cu 100, obținând n = 2. Înmulțim cu 10 și
+            adăugăm cifra pe care dorim să o adăugăm, obținând 23. Înmulțim n cu 100 și adăugăm restul pe care l-am
+            reținut, obținând 2374. Un cod ar fi: </p>
+        <pre><code>
+aux = n % pow(10, c);
+n = n / pow(10, c);
+n = n * 10;
+n = n + x;
+n = n * pow(10, c);
+n = n + aux;</code></pre>
+        <p>în care n este numărul, x este cifra pe care o adăugăm, c este poziția pe care inserăm numărul de la dreapta
+            la stânga, aux este variabila unde ținem minte restul, iar pow() este o funcție ce returnează puterea unui
+            număr la oricare exponent.</p>
+        <p>Pentru scădere, am efectua aproape aceleași operații. Pentru a elimina a doua cifră de la stânga la dreapta a
+            numărului 2374, am reține restul la împărțirea cu 100, am împărți numărul cu 1000, după am înmulți cu 100 și
+            am adăuga restul. Un cod ar arăta astfel:</p>
+        <pre><code>aux = n % pow(10, c-1);
+n = n / pow(10, c);
+n = n * pow(10, c-1);
+n = n + aux;
+            </code></pre>
+        <p>în care n este numărul, c este poziția pe care inserăm numărul de la dreapta la stânga, aux este variabila
+            unde ținem minte restul, iar pow() este o funcție ce returnează puterea unui număr la oricare exponent.</p>
+        <p>Știind acum cum putem să determinăm oricare cifră a unui număr, observăm faptul că noi putem itera asupra
+            fiecărei cifre dintr-un număr. Acest lucru ne permit să aplicăm diferite operații pe cifrele numerelor. Un
+            exemplu de cod care iterează asupra cifrelor este:</p>
+        <pre><code>int n, cif; 
+cin >> n;
+do              
+{               
+    cif = n % 10; ///obținem cifra.
+    n = n / 10; ///eliminăm ultima cifră.
+}while(n != 0);
+            </code></pre>
+        <p>în care n este numărul iar cif este cifra dorită.</p>
+        <p>Observați utilizarea funcției do…while() în locul funcției while(). O eroare făcută foarte des în rândul
+            elevilor este neabordarea situației n = 0, caz în care nu se execută nimic, rezultând în puncte pierdute .
+            Do…while() evită această situație.</p>
+        <p>Niște prelucrări pe care le putem aplica asupra lui n sunt: oglindirea, suma cifrelor, eliminarea cifrelor
+            impare și dublarea cifrelor pare.</p>
+        <p>Vom prezenta doar oglindirea și eliminarea cifrelor impare, restul prelucrărilor fiind lăsate pentru ca
+            cititorul să le rezolve.</p>
+        <pre><code>int n, oglx = 0;
+cin >> n;
+do
+{
+oglx = oglx * 10 + n%10;
+n = n / 10;
+} ///oglinditul unui nr.
+            
+            
+int n, put10 = 1, x = 0;
+cin >> n;
+do
+{
+if (x % 2 == 0) //este restul împărțirii la 2 = 0? Dacă da, este par.
+x = x * put10 + n % 10;
+x = x / 10;
+put10 = put10 * 10;
+}
+n = x; ///eliminarea cifrelor impare ale unui nr.
+            </code></pre>
+
+    </div>
+</body>
+
+</html>

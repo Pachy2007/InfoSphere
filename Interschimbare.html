@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algoritmi Elementari</title>
+    <link rel="stylesheet" href="Styles\BasicStyleInterface.css">
+    <link rel="icon" href="Images\logo.png" type="image/icon type">
+</head>
+
+<body>
+
+    <header>
+        <div class="header">
+
+
+            <div style="display: inline-block; width:40% ; height:100%">
+                <a href="index.html"><img src="Images\LogoHeader.png" height=100px></a>
+
+            </div>
+            <div style="display: inline-block; height: 100px; width:59% ; height:100%" align="right">
+
+
+                <a class="cool" href="">Documentatie</a>
+                <a class="cool" href="">Probleme</a>
+
+            </div>
+        </div>
+        </div>
+    </header>
+
+    <nav style="width: 100%; margin: 0; text-align: center; ">
+        <ul style=" list-style: none; margin: 0; padding-left: 0; background-color: rgb(0 ,0 ,0);">
+            <a href=" AlgoritmiElementari.html" style="background-color: rgb(0 ,0 ,0);">
+                <li style="background-color: rgb(46, 191, 145);">Algoritmi Elementari</li>
+            </a>
+            <a href="Vectori.html" style="background-color: rgb(0 ,0 ,0);">
+                <li>Vectori</li>
+            </a>
+            <a href="Matrici.html" style="background-color: rgb(0 ,0 ,0);">
+                <li>Matrici</li>
+            </a>
+        </ul>
+    </nav>
+    <ul class="nav_ul">
+        <a class="nav_a" href="DeterminareaCifrelorUnuiNumar.html">
+            <li class="nav_il">Prelucrarea cifrelor unui număr</li>
+        </a>
+        <a class="nav_a" href="Divizori.html">
+            <li class="nav_il">Divizorii unui număr</li>
+        </a>
+        <a class="nav_a" href="Interschimbare.html" style="background-color: rgb(158, 109, 205);">
+            <li class="nav_il">Interschimbarea a două variabile</li>
+        </a>
+        <a class="nav_a" href="CMMDCsiCMMMC.html">
+            <li class="nav_il">CMMDC și CMMMC</li>
+        </a>
+        <a class="nav_a" href="descompunereFactoriPrimi.html">
+            <li class="nav_il">Descompunerea în factori primi</li>
+        </a>
+        <a class="nav_a" href="fibo.html">
+            <li class="nav_il">Șirul lui Fibonnaci</li>
+        </a>
+        <a class="nav_a" href="aloBazaBaza.html">
+            <li class="nav_il">Trecerea unui număr dintr-o bază în alta</li>
+        </a>
+    </ul>
+    <div class="lection" style=" overflow: auto;">
+        <h1 style="text-align: center;">Interschimbarea a două variabile</h1>
+        <p>Interschimbarea a două variabile se face prin utilizarea unei variabile auxiliare. Un exemplu ar fi
+            schimbarea mâinilor în care sunt ținute două mingi. Pentru a pune mingea 2 pe mâna 1, trebuie pusă jos
+            mingea 1. Codul va punea numărul 1 în variabila aux, numărul 2 în variabila numărului 1, apoi numărul din
+            aux în variabila numărului 2. Un cod ar arăta astfel:</p>
+        <pre><code>int n1, n2, aux;
+cin >> n1 >> n2;
+aux = n1;
+n1 = n2;
+n2 = aux;
+                </code></pre>
+        <p>Pentru interschimbare, se poate folosi și funcția inclusă în c++ denumită „Swap(int a, int b)” care
+            interschimba valorile a și b.</p>
+    </div>
+
+</body>
+
+</html>

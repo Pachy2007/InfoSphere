@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algoritmi Elementari</title>
+    <link rel="stylesheet" href="Styles\BasicStyleInterface.css">
+    <link rel="icon" href="Images\logo.png" type="image/icon type">
+</head>
+
+<body>
+
+    <header>
+        <div class="header">
+
+
+            <div style="display: inline-block; width:40% ; height:100%">
+                <a href="index.html"><img src="Images\LogoHeader.png" height=100px></a>
+
+            </div>
+            <div style="display: inline-block; height: 100px; width:59% ; height:100%" align="right">
+
+
+                <a class="cool" href="">Documentatie</a>
+                <a class="cool" href="">Probleme</a>
+
+            </div>
+        </div>
+        </div>
+    </header>
+
+    <nav style="width: 100%; margin: 0; text-align: center; ">
+        <ul style=" list-style: none; margin: 0; padding-left: 0; background-color: rgb(0 ,0 ,0);">
+            <a href=" AlgoritmiElementari.html" style="background-color: rgb(0 ,0 ,0);">
+                <li style="background-color: rgb(46, 191, 145);">Algoritmi Elementari</li>
+            </a>
+            <a href="Vectori.html" style="background-color: rgb(0 ,0 ,0);">
+                <li>Vectori</li>
+            </a>
+            <a href="Matrici.html" style="background-color: rgb(0 ,0 ,0);">
+                <li>Matrici</li>
+            </a>
+        </ul>
+    </nav>
+    <ul class="nav_ul">
+        <a class="nav_a" href="DeterminareaCifrelorUnuiNumar.html">
+            <li class="nav_il">Prelucrarea cifrelor unui număr</li>
+        </a>
+        <a class="nav_a" href="Divizori.html">
+            <li class="nav_il">Divizorii unui număr</li>
+        </a>
+        <a class="nav_a" href="Interschimbare.html">
+            <li class="nav_il">Interschimbarea a două variabile</li>
+        </a>
+        <a class="nav_a" href="CMMDCsiCMMMC.html">
+            <li class="nav_il">CMMDC și CMMMC</li>
+        </a>
+        <a class="nav_a" href="descompunereFactoriPrimi.html" style="background-color: rgb(158, 109, 205);">
+            <li class="nav_il">Descompunerea în factori primi</li>
+        </a>
+        <a class="nav_a" href="fibo.html">
+            <li class="nav_il">Șirul lui Fibonnaci</li>
+        </a>
+        <a class="nav_a" href="aloBazaBaza.html">
+            <li class="nav_il">Trecerea unui număr dintr-o bază în alta</li>
+        </a>
+    </ul>
+    <div class="lection" style=" overflow: auto;">
+        <h1 style="text-align: center;">Descompunerea în factori primi</h1>
+        <p>Descompunerea în factori primi se realizeaza într-o manieră similară ca la determinarea divizorilor unui
+            număr, doar că cu anumite modificări. Observăm faptul că primul divizor este întotdeauna prim, iar prin a
+            elimina apariția acestuia din număr prin împărțiri, multiplii acestuia nu vor mai fi luați niciodată în
+            considerare, asigurându-ne că următorul divizor este prim. O optimizare pe care o mai putem face este
+            observația că nu vom considera niciodata multiplii lui 2 ca divizori. Din acest motiv, putem să înjumătățim
+            timpul de executare a programului printr-o optimizare. Astfel, avem acest algoritm:</p>
+        <pre><code>int n, q = 2, x = 0;
+in >> n;
+while (n % q == 0) ///optimizarea, scoatem q == 2 ca fiind caz special.
+{
+    x++;
+    n = n / q;
+}
+if (x != 0)
+    cout << x << ‘ ‘ << q << ‘\n‘;
+for (q = 3; q * q <= n; q=q+2)
+    {
+    x = 0;
+    while (n % q == 0)
+    {
+        x++;
+        n = n / q;
+    }
+    if (x != 0)
+        out << x << ‘ ‘ << q << ‘\n‘;
+}
+if (n != 1) //daca n nu este 1, atunci x-ul rămas este prim.
+    cout << 1 << ‘ ‘ << q << ‘\n‘;
+            </code></pre>
+        <p>
+            O observație este faptul că, prin descompunerea în factori primi, putem să ne dăm seama dacă un număr este
+            prim sau nu. Dacă nu s-a efectuat nicio operație și n nu este 1, atunci n este prim.
+        </p>
+    </div>
+
+</body>
+
+</html>
